@@ -8,33 +8,21 @@ namespace ProjectEuler
     {
         public static int Calculate(int limit)
         {
-            ////calculate the fibonacci numbers < limit
-            //Fibonacci fib = new Fibonacci(1, 2);
+            var fib = new Fibonacci(1, 2);
+            var fibionacciSequence = fib.Generate(limit);
+            int sum = 0;
+            foreach (int sequence in fibionacciSequence)
+            {
+                if (sequence % 2 == 0)
+                {
+                    sum += sequence;
+                }
+            }
 
-            //while (fib.CurrentSequence() < limit)
-            //{
-            //    if (fib.CurrentSequence() % 2 == 0)
-            //    {
-
-            //        result += fib.CurrentSequence();
-            //        fib.NextSequence();
-            //    }
-            //}
-            return 0;
+  
+            return sum;
         }
 
-        //private static int Fibonacci(int sequenceLimit)
-        //{
-        //    int fistSequence = 1;
-        //    int secondSequence = 2;
-        //    // In N steps compute Fibonacci sequence iteratively.
-        //    for (int i = 0; i < sequenceLimit; i++)
-        //    {
-        //        int temp = a;
-        //        a = b;
-        //        b = temp + b;
-        //    }
-        //    return a;
-        //}
+
     }
 }

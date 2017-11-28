@@ -11,12 +11,13 @@ namespace ProjectEulerTests
         {
             //Arrange
   
-            int firstSequence = 1;
-            int secondSequence = 2;
+            int firstTerm = 1;
+            int secondTerm = 2;
             int limit = 0;
+            var fib = new Fibonacci(firstTerm, secondTerm);
 
             //Act
-            var fibonacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
+            var fibonacciResult = fib.Generate(limit);
 
             //Assert
             Assert.Equal(0, fibonacciResult.Count);
@@ -28,12 +29,13 @@ namespace ProjectEulerTests
         {
             //Arrange
 
-            int firstSequence = 1;
-            int secondSequence = 2;
+            int firstTerm = 1;
+            int secondTerm = 2;
             int limit = 1;
+            var fib = new Fibonacci(firstTerm, secondTerm);
 
             //Act
-            var fibonacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
+            var fibonacciResult = fib.Generate(limit);
 
             //Assert
             Assert.Equal(1, fibonacciResult[fibonacciResult.Count - 1]);
@@ -45,12 +47,13 @@ namespace ProjectEulerTests
         {
             //Arrange
 
-            int firstSequence = 1;
-            int secondSequence = 2;
+            int firstTerm = 1;
+            int secondTerm = 2;
             int limit = 2;
+            var fib = new Fibonacci(firstTerm, secondTerm);
 
             //Act
-            var fibonacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
+            var fibonacciResult = fib.Generate(limit);
 
             //Assert
             Assert.Equal(2, fibonacciResult[fibonacciResult.Count - 1]);
@@ -62,17 +65,57 @@ namespace ProjectEulerTests
         {
             //Arrange
 
-            int firstSequence = 1;
-            int secondSequence = 2;
+            int firstTerm = 1;
+            int secondTerm = 2;
             int limit = 3;
+            var fib = new Fibonacci(firstTerm, secondTerm);
 
             //Act
-            var fibonacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
+            var fibonacciResult = fib.Generate(limit);
 
             //Assert
             Assert.Equal(3, fibonacciResult[fibonacciResult.Count - 1]);
 
         }
+
+
+        [Fact]
+        public void LastTerm_3Limit3_3()
+        {
+            //Arrange
+
+            int firstTerm = 1;
+            int secondTerm = 2;
+            int limit = 3;
+            var fib = new Fibonacci(firstTerm, secondTerm);
+
+            //Act
+            var fibonacciResult = fib.Generate(limit);
+
+            //Assert
+            Assert.Equal(3, fib.LastTerm);
+
+        }
+
+        [Fact]
+        public void NextToLastTerm_3Limit3_2()
+        {
+            //Arrange
+
+            int firstTerm = 1;
+            int secondTerm = 2;
+            int limit = 3;
+            var fib = new Fibonacci(firstTerm, secondTerm);
+
+            //Act
+            var fibonacciResult = fib.Generate(limit);
+
+            //Assert
+            Assert.Equal(2, fib.NextToLastTerm);
+
+        }
+
+
 
     }
 }
