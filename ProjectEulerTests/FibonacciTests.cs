@@ -6,19 +6,22 @@ namespace ProjectEulerTests
 {
     public class FibonacciTests
     {
-        [Fact]
-        public void HaveClass()
+       [Fact]
+        public void Generate_0_emptylist()
         {
             //Arrange
-            Fibonacci fib;
+  
+            int firstSequence = 1;
+            int secondSequence = 2;
+            int limit = 0;
+
             //Act
-            fib = new Fibonacci(1, 2);
+            var fibionacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
 
             //Assert
-            Assert.NotNull(fib);
-            
+            Assert.Equal(0, fibionacciResult.Count);
+
         }
 
- 
     }
 }

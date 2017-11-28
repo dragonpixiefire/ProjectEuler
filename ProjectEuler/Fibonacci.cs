@@ -4,16 +4,15 @@ using System.Text;
 
 namespace ProjectEuler
 {
-    public class Fibonacci
+    public static class Fibonacci
     {
-        private int _firstSequence = 0;
-        private int _secondSequence = 0;
-
-
-        public Fibonacci(int FirstSequence, int SecondSequence)
+   
+        public static List<int> Generate(int firstSequence, int secondSequence, int limit)
         {
-            this._firstSequence = FirstSequence;
-            this._secondSequence = SecondSequence;
+            var result = new List<int>();
+
+            
+            return result;
         }
     }
 
