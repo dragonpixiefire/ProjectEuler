@@ -22,19 +22,19 @@ namespace ProjectEulerTests
 
         }
 
-        //[Fact]
-        //public void EvenFibonacci_2_2()
-        //{
-        //    //Arrange
-        //    int limit = 2;
+        [Fact]
+        public void EvenFibonacci_2_2()
+        {
+            //Arrange
+            int limit = 2;
 
-        //    //Act
-        //    int result = EvenFibonacciNumbers.Calculate(limit);
+            //Act
+            int result = EvenFibonacciNumbers.Calculate(limit);
 
-        //    //Assert
-        //    Assert.Equal(2, result);
+            //Assert
+            Assert.Equal(2, result);
 
 
-        //}
+        }
     }
 }
