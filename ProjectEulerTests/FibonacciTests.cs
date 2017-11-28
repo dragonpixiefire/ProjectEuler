@@ -16,10 +16,10 @@ namespace ProjectEulerTests
             int limit = 0;
 
             //Act
-            var fibionacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
+            var fibonacciResult = Fibonacci.Generate(firstSequence, secondSequence, limit);
 
             //Assert
-            Assert.Equal(0, fibionacciResult.Count);
+            Assert.Equal(0, fibonacciResult.Count);
 
         }
 
