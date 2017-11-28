@@ -8,7 +8,8 @@ namespace ProjectEuler
     {
         public static int Calculate(int limit)
         {
-            var fibionacciSequence = Fibonacci.Generate(1, 2, limit);
+            var fib = new Fibonacci(1, 2);
+            var fibionacciSequence = fib.Generate(limit);
             int sum = 0;
             foreach (int sequence in fibionacciSequence)
             {

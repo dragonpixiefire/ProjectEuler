@@ -36,5 +36,21 @@ namespace ProjectEulerTests
 
 
         }
+
+
+        [Fact]
+        public void EvenFibonacci_34_44()
+        {
+            //Arrange
+            int limit = 34;
+
+            //Act
+            int result = EvenFibonacciNumbers.Calculate(limit);
+
+            //Assert
+            Assert.Equal(44, result);
+
+
+        }
     }
 }

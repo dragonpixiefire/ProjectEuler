@@ -4,31 +4,42 @@ using System.Text;
 
 namespace ProjectEuler
 {
-    public static class Fibonacci
+    public class Fibonacci
     {
-   
-        public static List<int> Generate(int firstSequence, int secondSequence, int limit)
+        private List<int> Sequence { get; set; }
+        private int FirstTerm { get; set; }
+        private int SecondTerm { get; set; }
+
+        public Fibonacci(int firstTerm, int secondTerm)
         {
-            var result = new List<int>();
-            if (firstSequence <= limit)
+            this.Sequence = new List<int>();
+            this.FirstTerm = firstTerm;
+            this.SecondTerm = secondTerm;
+        }
+
+        public List<int> Generate(int limit)
+        {
+            
+            if (this.FirstTerm <= limit)
             {
-                result.Add(firstSequence);
+                this.Sequence.Add(this.FirstTerm);
             }
-            if (secondSequence <= limit)
+            if (this.SecondTerm <= limit)
             {
-                result.Add(secondSequence);
+                this.Sequence.Add(this.SecondTerm);
             }
-            if (result.Count == 2)
+            if (this.Sequence.Count == 2)
             {
-                int sum = result[result.Count - 1] + result[result.Count - 2];
-                while (result[result.Count - 1] + result[result.Count - 2] <= limit)
+                int sum = this.Sequence[this.Sequence.Count - 1] + this.Sequence[this.Sequence.Count - 2];
+                while (sum <= limit)
                 {
-                    result.Add(sum);
+                    this.Sequence.Add(sum);
+                    sum = this.Sequence[this.Sequence.Count - 1] + this.Sequence[this.Sequence.Count - 2];
 
                 }
             }
 
-            return result;
+            return this.Sequence;
         }
     }
 
