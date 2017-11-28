@@ -9,6 +9,37 @@ namespace ProjectEuler
         private List<int> Sequence { get; set; }
         private int FirstTerm { get; set; }
         private int SecondTerm { get; set; }
+        public int LastTerm
+            {
+                get
+                {
+                    if (this.Sequence.Count>=1)
+                    {
+                    return this.Sequence[this.Sequence.Count-1];
+                    }
+                    else
+                    {
+                    return -1;
+                    }
+                   
+                }
+            }
+        public int NextToLastTerm
+        {
+            get
+            {
+                if (this.Sequence.Count >= 2)
+                {
+                    return this.Sequence[this.Sequence.Count - 2];
+                }
+                else
+                {
+                    return -1;
+                }
+
+            }
+        }
+        public int Last { get; set; }
 
         public Fibonacci(int firstTerm, int secondTerm)
         {
@@ -30,11 +61,11 @@ namespace ProjectEuler
             }
             if (this.Sequence.Count == 2)
             {
-                int sum = this.Sequence[this.Sequence.Count - 1] + this.Sequence[this.Sequence.Count - 2];
+                int sum = this.LastTerm + this.NextToLastTerm;
                 while (sum <= limit)
                 {
                     this.Sequence.Add(sum);
-                    sum = this.Sequence[this.Sequence.Count - 1] + this.Sequence[this.Sequence.Count - 2];
+                    sum = this.LastTerm + this.NextToLastTerm;
 
                 }
             }

@@ -79,6 +79,43 @@ namespace ProjectEulerTests
         }
 
 
+        [Fact]
+        public void LastTerm_3Limit3_3()
+        {
+            //Arrange
+
+            int firstTerm = 1;
+            int secondTerm = 2;
+            int limit = 3;
+            var fib = new Fibonacci(firstTerm, secondTerm);
+
+            //Act
+            var fibonacciResult = fib.Generate(limit);
+
+            //Assert
+            Assert.Equal(3, fib.LastTerm);
+
+        }
+
+        [Fact]
+        public void NextToLastTerm_3Limit3_2()
+        {
+            //Arrange
+
+            int firstTerm = 1;
+            int secondTerm = 2;
+            int limit = 3;
+            var fib = new Fibonacci(firstTerm, secondTerm);
+
+            //Act
+            var fibonacciResult = fib.Generate(limit);
+
+            //Assert
+            Assert.Equal(2, fib.NextToLastTerm);
+
+        }
+
+
 
     }
 }
