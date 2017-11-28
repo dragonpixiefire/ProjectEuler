@@ -27,5 +27,16 @@ namespace ProjectEulerTests
             int result = 3 % 3;
             Assert.Equal(0, result);
         }
+
+
+        [Fact]
+        public void Problem1Solution_1000_233168()
+        {
+            //Act
+            int result = MultiplesOf3And5.Calculate(1000);
+
+            //Assert
+            Assert.Equal(233168, result);
+        }
     }
 }

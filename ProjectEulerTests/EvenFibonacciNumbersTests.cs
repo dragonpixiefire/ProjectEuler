@@ -52,5 +52,23 @@ namespace ProjectEulerTests
 
 
         }
+
+        [Fact]
+        public void Problem2Solution_4000000_4613732()
+        {
+            //Arrange
+            int limit = 4000000;
+
+            //Act
+            int result = EvenFibonacciNumbers.Calculate(limit);
+
+            //Assert
+            Assert.Equal(4613732, result);
+
+
+        }
+
+
+      
     }
 }
